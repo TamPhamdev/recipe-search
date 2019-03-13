@@ -1,0 +1,36 @@
+.form-input {
+  background: transparent;
+  border: 0;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 0.4rem;
+  margin : 2rem;
+  justify-content: center;
+  display: flex;
+}
+
+.form-button {
+  border: solid 2px #e74c3c;
+  background: transparent;
+  border-radius: 1px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-left: 1.7rem;
+  transition: .3s;
+}
+.form-button:hover {
+  color: white;
+  background: #e74c3c;
+  transition: .3s;
+}
+input[type="text"] { 
+  width: 30%;
+  border: 0;
+  border-bottom: solid 2px #2c3e50;
+  outline: none !important;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #2c3e50 !important;
+}

@@ -1,0 +1,9 @@
+.Title {
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+.Text-center {
+  text-align: center;
+}
