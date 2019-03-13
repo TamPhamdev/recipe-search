@@ -8,18 +8,18 @@ class RecipeDetail extends Component {
     let { recipe } = this.props.location.state;
     console.log("object :", recipe);
     return (
-      <div className="container">
+      <div className="container" style={{marginTop: "50px"}}>
         <div className="row">
           <div className="col-sm-6 Text-center ">
-            <h4>{recipe.label}</h4>
+            <h4 className="Title">{recipe.label}</h4>
             <p>Provide by {recipe.source}</p>
-            <img src={recipe.image} alt={recipe.label} />
+            <img src={recipe.image} alt={recipe.label} style={{width:"50%"}} />
           </div>
           <div className="col-sm-6 ">
             <h3>{recipe.ingredientLines.length} Ingredients</h3>
-            <ul>
+            <ul className="list-ul">
               {recipe.ingredientLines.map(data => (
-                <li key={data}>{data}</li>
+                <li key={data} className="list-li">{data}</li>
               ))}
             </ul>
             <h3>Nutrition</h3>
@@ -30,7 +30,7 @@ class RecipeDetail extends Component {
             <p>Serving: {recipe.yield}</p>
           </div>
         </div>
-        <div className="row" style={{padding: "20px 0"}}>
+        <div className="row nav-button" style={{padding: "20px 0"}}>
           <Link to="/">
             <Button color="primary"> Back to recipe list</Button>
           </Link>

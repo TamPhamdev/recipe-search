@@ -6,8 +6,9 @@ import Recipes from "./components/Recipe/Recipe";
 
 const APP_KEY = process.env.REACT_APP_KEY;
 const APP_ID = process.env.REACT_APP_ID;
+
 class App extends Component {
- 
+  input = [];
   state = {
     recipes: [],
     loading: false
@@ -23,8 +24,12 @@ class App extends Component {
     let data = api_call.hits.map(value => value.recipe);
     this.setState({ recipes: data, loading: false });
   };
-// get data from localStorage
+
+  focus = () => this.input[0].focus();
+  inputRef = ref => this.input.push(ref);
+  // get data from localStorage
   componentDidMount() {
+    this.focus();
     const recipes = JSON.parse(localStorage.getItem("recipes"));
     this.setState({ recipes });
   }
@@ -45,7 +50,7 @@ class App extends Component {
           <Spinner className="Spinner" />
         ) : (
           <div width="100%">
-            <Form getRecipe={this.getRecipe} />
+            <Form getRecipe={this.getRecipe} ref={this.inputRef} />
             {!recipes ? (
               <h4> Your search return nothing !!! !!!</h4>
             ) : (

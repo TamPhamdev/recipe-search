@@ -65,4 +65,11 @@
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
+  transition: .3s;
+}
+
+.active-recipe__button:hover {
+  color: #fff !important;
+  background: #e74c3c !important;
+  transition: .3s;
 }

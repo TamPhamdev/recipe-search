@@ -24,7 +24,7 @@ const Recipes = props => (
               <Card className="recipes-box">
                 <CardImg
                   width="100%"
-                  height="220px"
+                  height="220px"  
                   src={recipe.image}
                   alt={recipe.label}
                 />
