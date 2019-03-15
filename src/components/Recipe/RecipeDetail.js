@@ -18,8 +18,8 @@ class RecipeDetail extends Component {
           <div className="col-sm-6 ">
             <h3>{recipe.ingredientLines.length} Ingredients</h3>
             <ul className="list-ul">
-              {recipe.ingredientLines.map(data => (
-                <li key={data} className="list-li">{data}</li>
+              {recipe.ingredientLines.map((data,index) => (
+                <li key={index.toString()} className="list-li">{data}</li>
               ))}
             </ul>
             <h3>Nutrition</h3>

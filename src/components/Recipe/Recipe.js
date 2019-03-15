@@ -14,10 +14,10 @@ const Recipes = props => (
   <div className="container">
     <div className="row">
       {props.recipes &&
-        props.recipes.map(recipe => {
+        props.recipes.map((recipe,index) => {
           return (
             <div
-              key={recipe.totalWeight}
+              key={index.toString()}
               className="col-sm-4"
               style={{ marginBottom: "20px" }}
             >
