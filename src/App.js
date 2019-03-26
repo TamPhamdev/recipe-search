@@ -47,11 +47,11 @@ class App extends Component {
           <h1 className="App-title">Search for recipe with React</h1>
         </header>
         {loading ? (
-          <Spinner className="Spinner" />
+          <Spinner className="Spinner" style={{marginTop: '20%'}}/>
         ) : (
           <div width="100%">
             <Form getRecipe={this.getRecipe} ref={this.inputRef} />
-            {!recipes ? (
+            { recipes.length <= 0 ? (
               <h4> Your search return nothing !!! !!!</h4>
             ) : (
               <Recipes recipes={this.state.recipes} />
