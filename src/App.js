@@ -6,7 +6,6 @@ import Recipes from "./components/Recipe/Recipe";
 
 const APP_KEY = process.env.REACT_APP_KEY;
 const APP_ID = process.env.REACT_APP_ID;
-
 class App extends Component {
   input = [];
   state = {
@@ -19,8 +18,8 @@ class App extends Component {
     e.preventDefault();
     const recipeName = e.target.elements.recipeName.value;
     const api_call = await fetch(
-      `https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=9`
-    ).then(res => res.json());
+      `https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=9`, {mode: 'no-cors'})
+    .then(res => res.json());
     let data = api_call.hits.map(value => value.recipe);
     this.setState({ recipes: data, loading: false });
   };
