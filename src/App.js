@@ -51,7 +51,7 @@ class App extends Component {
         ) : (
           <div width="100%">
             <Form getRecipe={this.getRecipe} ref={this.inputRef} />
-            { recipes.length <= 0 ? (
+            { !recipes.length  ? (
               <h4> Your search return nothing !!! !!!</h4>
             ) : (
               <Recipes recipes={this.state.recipes} />
