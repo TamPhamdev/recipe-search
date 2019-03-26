@@ -1,6 +1,7 @@
 import "./App.css";
 import { Spinner } from "reactstrap";
 import React, { Component } from "react";
+import axios from 'axios';
 import Form from "./components/Form/Form";
 import Recipes from "./components/Recipe/Recipe";
 
@@ -17,9 +18,9 @@ class App extends Component {
     this.setState({ loading: true });
     e.preventDefault();
     const recipeName = e.target.elements.recipeName.value;
-    const api_call = await fetch(
-      `https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=9`, {mode: 'no-cors'})
-    .then(res => res.json());
+    const api_call = await axios.get(
+      `https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q=${recipeName}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=9`)
+    .then(res => res.data);
     let data = api_call.hits.map(value => value.recipe);
     this.setState({ recipes: data, loading: false });
   };
