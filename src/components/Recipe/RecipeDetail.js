@@ -6,7 +6,6 @@ import "./RecipeDetail.css";
 class RecipeDetail extends Component {
   render() {
     let { recipe } = this.props.location.state;
-    console.log("object :", recipe);
     return (
       <div className="container" style={{marginTop: "50px"}}>
         <div className="row">
